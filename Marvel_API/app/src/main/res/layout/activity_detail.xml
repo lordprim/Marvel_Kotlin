@@ -19,50 +19,65 @@
 
     <TextView
         android:id="@+id/tvNamedt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:text="TextView"
+        android:textColor="#000000"
+        app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivHeroidt" />
 
     <TextView
         android:id="@+id/tvComicsdt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:text="TextView"
+        android:textColor="#000000"
+        app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNamedt" />
 
     <TextView
         android:id="@+id/tvSeriesdt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:text="TextView"
+        android:textColor="#000000"
+        app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvComicsdt" />
 
     <TextView
         android:id="@+id/tvStoriesdt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:text="TextView"
+        android:textColor="#000000"
+        app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSeriesdt" />
 
     <TextView
         android:id="@+id/tvEventsdt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:text="TextView"
+        android:textColor="#000000"
+        app:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvStoriesdt" />

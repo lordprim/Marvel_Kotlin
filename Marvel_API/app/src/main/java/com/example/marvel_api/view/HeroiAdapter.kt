@@ -42,6 +42,8 @@ class HeroiAdapter(
             val ivHeroi = findViewById<ImageView>(R.id.ivHeroi)
             val tvName = findViewById<TextView>(R.id.tvName)
 
+
+            // Implementação provisória, a mesma foi feita por conta da URL da imagem ser HTTP, assim o Glide não consegue acessa-la.
             var midia = "${item.thumbnail?.path}.${item.thumbnail?.extension}"
             var lista = midia.split(":").toMutableList()
             lista[0] = lista[0]+"s"
