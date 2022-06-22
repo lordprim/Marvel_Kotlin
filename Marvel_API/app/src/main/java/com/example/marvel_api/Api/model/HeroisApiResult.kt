@@ -21,7 +21,7 @@ data class HeroiResult(
     val comics: HeroiComics?,
     val series: HeroiSeries?,
     val stories: HeroiStories?,
-    val events: HeroiEvents?
+
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString(),
@@ -29,7 +29,7 @@ data class HeroiResult(
         parcel.readParcelable(HeroiComics::class.java.classLoader),
         parcel.readParcelable(HeroiSeries::class.java.classLoader),
         parcel.readParcelable(HeroiStories::class.java.classLoader),
-        parcel.readParcelable(HeroiEvents::class.java.classLoader)
+
     ) {
     }
 
@@ -39,7 +39,7 @@ data class HeroiResult(
         parcel.writeParcelable(comics, flags)
         parcel.writeParcelable(series, flags)
         parcel.writeParcelable(stories, flags)
-        parcel.writeParcelable(events, flags)
+
     }
 
     override fun describeContents(): Int {
@@ -157,31 +157,6 @@ data class HeroiStories(
         }
 
         override fun newArray(size: Int): Array<HeroiStories?> {
-            return arrayOfNulls(size)
-        }
-    }
-}
-
-data class HeroiEvents(
-    val events: Int?,
-) : Parcelable {
-    constructor(parcel: Parcel) : this(parcel.readValue(Int::class.java.classLoader) as? Int) {
-    }
-
-    override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeValue(events)
-    }
-
-    override fun describeContents(): Int {
-        return 0
-    }
-
-    companion object CREATOR : Parcelable.Creator<HeroiEvents> {
-        override fun createFromParcel(parcel: Parcel): HeroiEvents {
-            return HeroiEvents(parcel)
-        }
-
-        override fun newArray(size: Int): Array<HeroiEvents?> {
             return arrayOfNulls(size)
         }
     }

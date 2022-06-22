@@ -22,7 +22,6 @@ class DetailActivity : AppCompatActivity() {
             val textView3 : TextView = findViewById(R.id.tvComicsdt)
             val textView4 : TextView = findViewById(R.id.tvSeriesdt)
             val textView5 : TextView = findViewById(R.id.tvStoriesdt)
-            val textView6 : TextView = findViewById(R.id.tvEventsdt)
 
             var midia2 = "${heroi.thumbnail?.path}.${heroi.thumbnail?.extension}"
             var lista = midia2.split(":").toMutableList()
@@ -34,11 +33,10 @@ class DetailActivity : AppCompatActivity() {
             Log.d("HEROI_INTENT", heroi.toString())
 
             Glide.with(this).load(midia2).into(imageView)
-            textView2.text = heroi.name
-            textView3.text = heroi.comics.toString()
-            textView4.text = heroi.series.toString()
-            textView5.text = heroi.stories.toString()
-            textView6.text = heroi.events.toString()
+            textView2.text = "Herói: ${heroi.name}"
+            textView3.text = "Comics: ${heroi.comics?.available.toString()}"
+            textView4.text = "Series: ${heroi.series?.available.toString()}"
+            textView5.text = "Histórias: ${heroi.stories?.available.toString()}"
         }
 
     }

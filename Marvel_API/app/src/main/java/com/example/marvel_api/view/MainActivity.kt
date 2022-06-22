@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         heroisApiResult?.data?.results?.let {
             val herois: List<HeroiResult> = it.map {
-                HeroiResult(it.name, it.thumbnail, it.comics, it.series, it.stories, it.events)
+                HeroiResult(it.name, it.thumbnail, it.comics, it.series, it.stories)
             }
 
             var heroiAdapter = HeroiAdapter(herois)
