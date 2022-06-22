@@ -17,15 +17,29 @@ data class HeroiData(
 data class HeroiResult(
     val name: String,
     val thumbnail: HeroiScreen,
-    val urls: List<HeroiUrls>,
-)
-
-data class HeroiUrls(
-    val type: String,
-    val url: String
+    val comics: HeroiComics,
+    val series: HeroiSeries,
+    val stories: HeroiStories,
+    val events: HeroiEvents
 )
 
 data class HeroiScreen(
     val path: String?,
     val extension: String?
+)
+
+data class HeroiComics(
+    val available: Int,
+)
+
+data class HeroiSeries(
+    val available: Int,
+)
+
+data class HeroiStories(
+    val available: Int,
+)
+
+data class HeroiEvents(
+    val events: Int?,
 )

@@ -7,19 +7,26 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.marvel_api.Api.HeroiRepository
 import com.example.marvel_api.Api.model.HeroiResult
-import com.example.marvel_api.Api.model.HeroiScreen
 import com.example.marvel_api.R
 
 class MainActivity : AppCompatActivity() {
+
+    var loaded = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         val recyclerView = findViewById<RecyclerView>(R.id.rvHeroi)
 
-        Thread(Runnable {
-            loadHerois(recyclerView)
-        }).start()
+        if (!loaded) {
+            Thread(Runnable {
+                loadHerois(recyclerView)
+            }).start()
+
+            loaded = true
+
+        }
     }
     private fun loadHerois(
         recyclerView: RecyclerView
@@ -29,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         heroisApiResult?.data?.results?.let {
             val herois: List<HeroiResult> = it.map {
-                HeroiResult(it.name, it.thumbnail, it.urls)
+                HeroiResult(it.name, it.thumbnail, it.comics, it.series, it.stories, it.events)
             }
 
             Log.d("HEROI_API", it.toString())
