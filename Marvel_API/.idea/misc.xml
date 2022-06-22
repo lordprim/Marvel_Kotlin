@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GitHub/Marvel_Kotlin/Marvel_API/app/src/main/res/layout/activity_detail.xml" value="0.3009833262077811" />
+        <entry key="..\:/GitHub/Marvel_Kotlin/Marvel_API/app/src/main/res/layout/heroi_item.xml" value="0.1" />
         <entry key="..\:/Users/Marino/AndroidStudioProjects/Marvel_API/app/src/main/res/layout/activity_main.xml" value="0.28894927536231885" />
         <entry key="..\:/Users/Marino/AndroidStudioProjects/Marvel_API/app/src/main/res/layout/heroi_item.xml" value="0.365625" />
       </map>

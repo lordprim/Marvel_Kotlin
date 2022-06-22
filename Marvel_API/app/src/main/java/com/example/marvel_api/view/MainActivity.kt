@@ -1,5 +1,6 @@
 package com.example.marvel_api.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -13,6 +14,10 @@ class MainActivity : AppCompatActivity() {
 
     var loaded = false
 
+    companion object{
+        const val USER = "heroi"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,7 +30,6 @@ class MainActivity : AppCompatActivity() {
             }).start()
 
             loaded = true
-
         }
     }
     private fun loadHerois(
@@ -39,6 +43,8 @@ class MainActivity : AppCompatActivity() {
                 HeroiResult(it.name, it.thumbnail, it.comics, it.series, it.stories, it.events)
             }
 
+            var heroiAdapter = HeroiAdapter(herois)
+
             Log.d("HEROI_API", it.toString())
 
             val layoutManager = LinearLayoutManager(this)
@@ -46,6 +52,14 @@ class MainActivity : AppCompatActivity() {
             recyclerView.post {
                 recyclerView.layoutManager = layoutManager
                 recyclerView.adapter = HeroiAdapter(herois)
+                recyclerView.adapter = heroiAdapter
+
+                heroiAdapter.onItemClick = {
+                    val intent = Intent(this, DetailActivity::class.java)
+                    intent.putExtra(USER, it)
+                    startActivity(intent)
+                }
+
             }
         }
     }

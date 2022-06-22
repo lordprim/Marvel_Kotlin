@@ -46,28 +46,5 @@ object HeroiRepository {
         val call = service.listHerois()
 
         return call.execute().body()
-
-//        call.enqueue(object : Callback<HeroisApiResult> {
-//            override fun onResponse(
-//                call: Call<HeroisApiResult>,
-//                response: Response<HeroisApiResult>
-//            ) {
-//                if (response.isSuccessful) {
-//                    val body = response.body()
-//                    body?.data?.results?.let {
-//                        Log.d("HEROI_API", it[0].name)
-//                        for (item in it) {
-//                            Log.d("HEROI_API", item.name)
-//                        }
-//
-//                    }
-//                }
-//                Log.d("HEROI_API", "Heroi list Loaded")
-//            }
-//
-//            override fun onFailure(call: Call<HeroisApiResult>, t: Throwable) {
-//                Log.e("HEROI_API", "ERROR Loading heroi list", t)
-//            }
-//        })
     }
 }

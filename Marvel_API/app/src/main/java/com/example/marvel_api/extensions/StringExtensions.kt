@@ -1,7 +1,5 @@
 package com.example.marvel_api.extensions
 
-import java.math.BigInteger
-import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
 fun String.md5(): String {
