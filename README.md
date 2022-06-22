@@ -14,7 +14,6 @@ Build:<br />
 Aplicação:<br />
     Androidx - API 33<br />
 
-<h2>Interface do aplicativo</h2>
 <h3>Interface do aplicativo</h3>
 
 <h3>Como usar o aplicativo</h3>
