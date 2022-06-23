@@ -27,3 +27,6 @@ const val PRIVATE_KEY = ""<br/>
 
 <h3>Funcionamento do aplicativo</h3>
 O APP funciona a partir de uma tela onde há o nome e imagem dos personagens da Marvel, onde clicando no personagem desejado é apresentada uma nova tela com mais informações sobre o mesmo<br />
+
+<h4>Funções não implementadas nesta release</h4>
+Não foi implantando a tela de favoritos e pesquisa.
