@@ -38,6 +38,19 @@
             app:layout_constraintStart_toEndOf="@+id/ivHeroi"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <Button
+            android:id="@+id/btFav"
+            android:layout_width="69dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="210dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="86dp"
+            android:text="FAV"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivHeroi"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

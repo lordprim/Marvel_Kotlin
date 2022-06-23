@@ -5,12 +5,13 @@ import com.example.marvel_api.Api.model.*
 import com.example.marvel_api.extensions.md5
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
+
+// Aqui é feito o login na API para coleta das informações, foi utilizado HttpClient para isso.
+// A API em questão precisa de duas KEYS e uma HASH md5, a autenticação md5 é feita no arquivo StrinExtensions.kt dentro de extensions
+// Para logar na API é necessário também o time zone, que é apresentado por ts na estrutura do código
 
 object HeroiRepository {
     private val service: HeroiService
@@ -34,6 +35,9 @@ object HeroiRepository {
                     chain.proceed(original.newBuilder().url(url).build())
         }
 
+// Aqui é onde o retrofit faz o acesso a URL e converte de JSON para a linguagem que o kotlin entende.
+// É aqui também onde o retrofit cria o serviço que coletará as informações da API
+
         val retrofit = Retrofit.Builder()
             .baseUrl("https://gateway.marvel.com:443/v1/public/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -44,7 +48,6 @@ object HeroiRepository {
 
     fun listHerois(): HeroisApiResult? {
         val call = service.listHerois()
-
         return call.execute().body()
     }
 }

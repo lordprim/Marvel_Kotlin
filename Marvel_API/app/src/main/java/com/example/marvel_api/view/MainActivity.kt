@@ -12,10 +12,11 @@ import com.example.marvel_api.R
 
 class MainActivity : AppCompatActivity() {
 
-    var loaded = false
+    var herois = emptyList<HeroiResult>()
 
     companion object{
         const val USER = "heroi"
+        const val FAV = "favorito"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,22 +25,20 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.rvHeroi)
 
-        if (!loaded) {
+        if (herois.isEmpty()) {
             Thread(Runnable {
                 loadHerois(recyclerView)
             }).start()
-
-            loaded = true
         }
     }
+
     private fun loadHerois(
         recyclerView: RecyclerView
     ) {
-
         val heroisApiResult = HeroiRepository.listHerois()
 
         heroisApiResult?.data?.results?.let {
-            val herois: List<HeroiResult> = it.map {
+            herois = it.map {
                 HeroiResult(it.name, it.thumbnail, it.comics, it.series, it.stories)
             }
 
@@ -59,7 +58,6 @@ class MainActivity : AppCompatActivity() {
                     intent.putExtra(USER, it)
                     startActivity(intent)
                 }
-
             }
         }
     }
